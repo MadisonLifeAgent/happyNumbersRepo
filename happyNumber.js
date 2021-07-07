@@ -21,12 +21,36 @@
 
 
 
-function happyNumber(){
+// function happyNumber(){
 
-    // get number from user
-    let userNumber = prompt("Enter a number from 1 to 99", "30");
+//     // get number from user
+//     let unhappyNumbers = [4, 16, 20, 37, 42, 58, 89, 145];
+//     let yourNumberIsHappy = "Your number, is a Happy Number";
+//     // let yourNumberIsUnhappy = "Your number, is NOT a Happy Number";
+//     let result = "";
+
+//     // check number to make sure it initially isn't already unhappy
+//     for (let i = 0; i < unhappyNumbers.length; i++){
+//         if (userNumber === unhappyNumbers[i]){
+//             result = "Your number, is NOT a Happy Number";
+//         } 
+        
+//         // else {
+//            // result = "Your number, is a Happy Number";
+//        // }
+//     }
+
+//     console.log(result);
+// }
+
+// get a number from user and convert user input to a number
+function convertNumber(){
+    let userString = prompt("Enter a number from 1 to 99", "30");
+
+    let userNumber = parseInt(userString);
 
     console.log(userNumber);
 }
 
-happyNumber();
+convertNumber(); 
+// happyNumber();
