@@ -32,23 +32,22 @@ function convertNumber(convertMyNumber){
     return convertMyNumber;
 }
 
-// check number to see if it is happy
-let result = happyNumber(myConvertedNumber);
+// check number to see if it is unhappy
+let result = happyNumberCheck(myConvertedNumber);
 
-function happyNumber(userNumber){
+function happyNumberCheck(userNumber){
 
     // get number from user
     let unhappyNumbers = [4, 16, 20, 37, 42, 58, 89, 145];
     let yourNumberIsHappy = "Your number, is a Happy Number";
     let yourNumberIsUnhappy = "Your number, is NOT a Happy Number";
-    let answer = "";
 
     // check number to make sure it initially isn't already unhappy
-    for (let i = 0; i < unhappyNumbers.length; i++){
-        if (userNumber === unhappyNumbers[i]){
-            answer = yourNumberIsUnhappy;
-        }
-    }
+     if (unhappyNumbers.includes(userNumber)){
+        console.log(yourNumberIsUnhappy);
+     }
+     else {
+         
+     }
 
-    console.log(answer);
 }
