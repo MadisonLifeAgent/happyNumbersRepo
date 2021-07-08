@@ -1,53 +1,61 @@
 "use strict";
 
-// get number from user input (1-99 only)
+// get usernumber
+let userNumberString = prompt("enter a number", "125");
 
-// convert number into a string and store in a new value
+let newArray = splitStringUp(userNumberString);
 
-// variable to store result from function call (below)
+// split up string in to an array
+function splitStringUp(userString){
+    let justANumber = "";
+    let justAnArray = [];
 
-// call a function to check number if it is a happy number
+    // take each string and put into an array
+    for(let i = 0; i < userString.length; i++){
+        justANumber = userString.charAt(i);
+        justAnArray.push(justANumber);
+    }
+    return justAnArray;
+}
+
+// convert Array String elements into numbers
+let nowNumberArray = stringToNumber(newArray);
+
+function stringToNumber(anotherArray){
+    let justAnotherArray = [];
+    let noLongerAString = 0;
+
+    // take each array element (string) and convert to a number
+    for (let i = 0; i < anotherArray.length; i++){
+        let justAnotherNumber = anotherArray[i];
+        
+        // convert string to number
+        noLongerAString = parseInt(justAnotherNumber);
+
+        // push to new array
+        justAnotherArray.push(noLongerAString);
+    }
+
+    return justAnotherArray;
+}
+
+// multiply numbers in number array to each other
+let productsArray = multiplyTheNumbers(nowNumberArray);
+
+function multiplyTheNumbers(numberArray) {
+    let productsArray = [];
+    for (let i = 0; i < numberArray.length; i++){
+        let productNumber = numberArray[i] * numberArray[i];
+        productsArray.push(productNumber);
+    }
     
-    // take number(s) and calculate square answers to see if they become 1
-        // split number(s) into array
-        // iterate through array to square the number(s)
-        // keep looping until you get 1 or 0 (so the loop will actually stop)
-            // find out how to stop the loop
-                // unhappy numbers end if result is: 4, 16, 37, 58, 89, 145, 42, 20
-    // return result to where called
-        // result should be whether or not the number is a happy number, not the actual value
-
-// out put result to console
-
-let userString = prompt("Enter a number from 1 to 99", "30");
-
-// convert user string to number
-let myConvertedNumber = convertNumber(userString); 
-
-// get a number from user and convert user input to a number
-function convertNumber(convertMyNumber){
-
-    convertMyNumber = parseInt(userString);
-
-    return convertMyNumber;
+    return productsArray;
 }
 
-// check number to see if it is unhappy
-let result = happyNumberCheck(myConvertedNumber);
-
-function happyNumberCheck(userNumber){
-
-    // get number from user
-    let unhappyNumbers = [4, 16, 20, 37, 42, 58, 89, 145];
-    let yourNumberIsHappy = "Your number, is a Happy Number";
-    let yourNumberIsUnhappy = "Your number, is NOT a Happy Number";
-
-    // check number to make sure it initially isn't already unhappy
-     if (unhappyNumbers.includes(userNumber)){
-        console.log(yourNumberIsUnhappy);
-     }
-     else {
-         
-     }
-
-}
+// CONTINUE FROM HERE FUE
+// ADD UP PRODUCTS TO SEE IF THEY ARE HAPPY OR UNHAPPY
+    // IF THEY EQUAL 1 THEN THEY ARE HAPPY
+    // IF THEY EQUAL 4 THEY ARE NOT
+    
+// debug line
+console.log(productsArray);
